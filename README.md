@@ -1,3 +1,19 @@
+# Here is what I have learned in this repo.
+### 1.useState hook.
+### 2. useEffect hook.
+### 3. Added a fetch call.
+### 4. moved fetch to axios for smart work.
+### 5. Axios comes under services hence, learned for proper arrangement.
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
