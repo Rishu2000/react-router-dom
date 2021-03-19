@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import axios from "axios"
+import {getTodos} from "./services/ToDo"
 
 function App() {
 
@@ -7,8 +7,7 @@ function App() {
   const [todos,setTodos] = useState();
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/todos/1')
-    .then((json) => setTodos(json.data))
+    getTodos().then((json) => setTodos(json.data))
   },)      
 
   return (
