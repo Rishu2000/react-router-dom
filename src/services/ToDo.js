@@ -1,5 +1,6 @@
 import axios from "axios"
+import API from "../constants/API"
 
 export const getTodos = () => (
-    axios.get('https://jsonplaceholder.typicode.com/todos/1')
+    axios.get(API+'todos/1')
 )
