@@ -8,7 +8,7 @@ function App() {
     setTimeout(() => {
       setValue(value-1);
     },1000)
-  },[value])
+  },[value])      //Amazing property of dependency in useEffect().
 
   return (
     <div className="container">
