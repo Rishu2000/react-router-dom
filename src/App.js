@@ -1,9 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Header from "./components/Header"
 
 function App() {
+
+  const [Dark,setDark] = useState(true);
+
+  const handleHeader = (e) => {
+    e.preventDefault();
+      setDark(e.target.innerHTML.trim() === "dark");  
+  }
+
   return (
     <div>
-      Rishav
+      <Header dark={Dark}>Header</Header>
+      <div className="container">
+        <div className="row">
+          <div className="col-12 text-center">
+            <button className="btn btn-primary m-3" onClick={handleHeader}> dark</button>
+            <button className="btn btn-primary m-3" onClick={handleHeader}>light</button>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
