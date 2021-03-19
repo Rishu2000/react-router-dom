@@ -7,7 +7,7 @@ function App() {
 
   const handleHeader = (e) => {
     e.preventDefault();
-      setDark(e.target.innerHTML.trim() === "dark");  
+      setDark(e.target.innerHTML.trim() === "dark");  //.trim() function used to remove white-space from both side.
   }
 
   return (
