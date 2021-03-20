@@ -13,6 +13,13 @@ function App() {
       setDark(e.target.innerHTML.trim() === "dark");  //.trim() function used to remove white-space from both side.
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+      if(email.length >3 && password.length >3){
+        alert("Your email is "+email+" and Password is "+password+".");
+      }
+  }
+
   return (
     <div>
       <Header dark={Dark}>Header</Header>
@@ -41,7 +48,7 @@ function App() {
                 <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
                 <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
               </div>
-              <button type="submit" className="btn btn-primary">Submit</button>
+              <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Submit</button>
             </form>
           </div>
           <div className="col-6">
