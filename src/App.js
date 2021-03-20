@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Header from "./components/Header"
+import FormControl from "./components/FormControl"
 
 function App() {
 
@@ -23,30 +24,19 @@ function App() {
           </div>
           <div className="col-6">
             <form>
-              <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                <input 
-                  type="email" 
-                  className="form-control" 
-                  id="exampleInputEmail1" 
-                  aria-describedby="emailHelp"
-                  value={email} 
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }} />
-                <small id="emailHelp" className="form-text">We'll never share your email with anyone else.</small>
-              </div>
-              <div className="mb-3">
-                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                <input 
-                  type="password" 
-                  className="form-control" 
-                  id="exampleInputPassword1"
-                  value={password} 
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                  }} />
-              </div>
+              {["Email","Password"].map((formGroup,key) => (
+                <FormControl {...formGroup} 
+                  Label={formGroup}
+                  key={key} 
+                  Type={formGroup.toLocaleLowerCase()} 
+                  ID={formGroup.toLocaleLowerCase()}
+                  Placeholder={"Enter your "+formGroup}
+                  Value={formGroup === "Email"?email:password}
+                  OnChange = {(e) => { 
+                    formGroup === "Email"?setEmail(e.target.value):setPassword(e.target.value)
+                  }}
+                />
+              ))}
               <div className="mb-3 form-check">
                 <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
                 <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
