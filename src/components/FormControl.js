@@ -26,7 +26,8 @@ function FormControl({
                 aria-describedby={ID+"Help"}
                 value={Value} 
                 onChange={OnChange} 
-                placeholder={Placeholder} />
+                placeholder={Placeholder} 
+                autoComplete="off" />
             {SmallText && 
                 <small 
                     id={ID+"Help"} 
